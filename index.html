@@ -1,0 +1,45 @@
+<!--file where all elements of project live, only file we need to display on browser and all other files will go through this file-->
+
+<!--write the following code by writing a ! then clicking the first popup-->
+<!DOCTYPE html> <!--tells browser when it reals doc that this is gonna be html-->
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"> <!--tells code to use standard characters we can find-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--shows the width and height are accurate across devices-->
+        <link rel="stylesheet" href="./style.css"> <!--connects style sheet to html. type link to get automatic reference to style sheet. link specific style sheet by typing ./ then selecting from drop down-->
+        <script src="./script.js" defer></script> <!--links to java doc... defer means that before you run the java doc, run the whole html file first-->
+        <title>To Do List</title> <!--Title of web page, see web page by clicking go live at the bottom of the screen-->
+    </head>
+
+    <body> 
+        <!--can make headings (go from h1 to h6)-->
+        <section class="todo"> <!--way to divide content into sections-->
+            <h2>To-do list</h2>
+            <div class="input"> <!--catch all element that doesn't mean anything by itself but is useful to create boxes, borders, etc.-->
+                <input 
+                type="text" 
+                class="input-field" 
+                id="todoInput" 
+                placeholder="Add a new todo"> <!--where we take in information from user of website and use it for something (ex. logging in is an input)--> <!--elements can have many different classes, but can only have one ID and one ID is unique and can only be put inside one element-->
+                <button class="btn">Add</button>    
+            </div>   
+            <ul class="scroll">
+                <li id="todoList"></li>
+            </ul><!--unordered list (has bullet points)-->
+            <div>
+                <hr class="counter"> <!--fancy way of saying a break, a line/divider-->
+                <div class="counter-container">
+                    <p><span id="todoCount">0</span> items total</p> <!--stands for paragraph--> <!--span doesnt mean anything on its own but can be useful to separate diff elements (like div)-->
+                    <button id="deleteButton">Delete All</button>
+                </div>
+            </div>
+        </section>
+        <footer> <!--bottom part of the website--> 
+            <div class="footer">
+                <p class="made-by">Made By</p>
+                <p class="author">Megan Pereira</p>
+            </div>
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,202 @@
+:root { /*even deeper than the body, the entire project in the entire folder even the head*/
+    --gradient: linear-gradient(
+        180deg, /*goes from bottom to top, 0deg would be bottom to top, 45 deg would be a dif corner*/
+        rgba(45, 112, 1253, 0.73) 0%, /*a is for the opacity.... 0% means it starts all the way on the left side*/
+        #163e92 100% /*ends all the way at the other side*/
+        ); /*made variable with name gradient and the value of red*/
+        --dark: #001747;
+        --grey: #b1bacb;
+        --grey-border: rgba(210, 210, 210, 0.75);
+        --grey-light: #eeeeee;
+        --grey-dark: #405175;
+        --blue: #2d70fd;
+        --green: #00d8a7;
+        --white: #ffffff;
+}
+
+
+body {
+    background: var(--gradient);
+     margin: 0;/*spacing around elements. If we right click on page and hit inspect, if you hover over diferent parts of the code, the padding is the green color and the margins are the orange color*/
+     height: 100vh; /*means body is gonna take 100% of however big the screen is*/
+     display: flex; /*by default it puts one element next to another element horizontally in columns, allowing us ot decide how to space them out*/
+     flex-direction: column; /*puts flexed elements under each other vertically */
+     justify-content: space-evenly;
+     align-items: center;
+}
+
+.btn {
+    color: var(--white);
+    font-size: 1.1rem; /*16 pixels if 1 rem*/
+    padding: 0.7rem 1.5rem; /*top and bottom is the first number, left and right is the second number*/
+    border-radius: 0.3rem; /*smooths out radius of elements*/
+    background-color: var(--blue);
+    border: none;
+    position: absolute; /*how something sits within document. absolute means that the button is gonna sit absolute within its parent (the section element)*/
+    right: 0.5rem;
+    bottom: 0.5rem;
+}
+
+h1, h2, h3, h4, h5, h6, p { /*CVS Allows us to target and style all elements at the same time (in this case we are adjusting the headers and paragraphs)*/
+    margin: 0;
+}
+
+
+/* Todo Container*/
+
+.todo { /*targets class of todo*/
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border-radius: 2rem;
+    background: var(--white);
+    padding: 3rem;
+    height: 50%; /*gives height of 50% of parents height*/
+    width: 60%;
+    box-shadow: 0 1rem 3rem 1rem rgba(0, 23, 71, 0.15); /*shadow behind whole box*/
+    max-width: 30rem; /*means when we are in full screen, it box doesn't get bigger than the max size*/
+}
+
+h2 {
+    text-transform: uppercase; /*makes heading uppercase*/
+    height: 3rem;
+    color: var(--dark);
+    text-align: center;
+}
+
+.input { /*use . to target input class instead of input element*/
+    position: relative;
+    display: flex;
+}
+
+.input-field {
+    width: 100%;
+    border: 0.06rem solid #d2d2b2bf;
+    border-radius: 0.5rem;
+    padding: 1.25rem;
+    font-size: 1rem;
+}
+
+input[typ="text"]::placeholder { /*targets the placeholder of the input*/
+    color: var(--grey);
+}
+
+.todo-container {
+    display: flex;
+    gap: 1rem;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+    overflow-y: scroll; /*allows list to scroll*/
+}
+
+li {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    padding: 1.3rem;
+}
+
+#todoList p { /*saying we are going to the id todoList (targeted by the #) then targeting all the paragraphs inside the todo list id*/
+    display: flex;
+    gap: 1rem;
+    color: var(--dark);
+    align-items: center;
+}
+
+#todoList .disabled {
+    color: #8f98a8;
+}
+
+.disabled {
+    display: flex;
+    text-decoration: line-through;
+}
+
+input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer; /*makes it so the cursor turns into the clickly shape*/
+}
+
+input[type="checkbox"]::before { /*targets checkbox when it is unchecked*/
+    content: "\2713";
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    font-size: 1.7rem;
+    text-align: center;
+    border: 0.06rem solid var(--grey);
+    border-radius: 50%;
+    color: transparent;
+}
+
+input[type="checkbox"]:checked::before { /*targets checkmark after we check it*/
+    color: var(--white);
+    background-color: var(--green);
+    border: 0.06rem solid var(--green);
+    border-radius: 50%;
+}
+
+.counter {
+    border: 0.06rem solid var(--grey-light);
+}
+
+.counter-container {
+    height: 2rem;
+    display: flex;
+    justify-content: space-between;
+    color: var(--grey);
+}
+
+.counter-container p {
+    align-self: center;
+}
+
+.counter-container button {
+    border: none;
+    background-color: transparent;
+    color: var(--grey);
+    font-size: 1rem;
+}
+
+.footer {
+    display: flex;
+    gap: 1.8rem;
+    background-color: var(--white);
+    padding: 1.2rem;
+    border-radius: 0.5rem;
+}
+
+.made-by, .author {
+    font-size: 0.9rem;
+}
+
+.made-by {
+    color: var(--grey-dark);
+}
+
+.author {
+    color: var(--blue);
+    font-weight: bold;
+}
+
+.scroll {
+    height: 15rem;
+    scrollbar-width: thin;
+}
+
+.scroll::-webkit-scrollbar { /*nsure it looks good across different broswers*/
+    width: 0.6rem;
+}
+
+.scroll::-webkit-scrollbar-thumb { 
+    background-color: var(--blue);
+    border-radius: 0.5rem;
+}
+.scroll::-webkit-scrollbar-track { 
+    display: none;
+}
